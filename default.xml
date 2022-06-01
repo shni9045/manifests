@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <default sync-j="2" revision="dunfell" />
+
+  <remote name="yocto"
+	fetch="https://git.yoctoproject.org" />
+  <remote name="oe"
+	fetch="https://git.openembedded.org" />
+  <remote name="freescale-github"
+	fetch="https://github.com/Freescale" />
+  <remote name="swupdate-github"
+	fetch="https://github.com/sbabic" />
+  <remote name="timesys-github"
+	fetch="https://github.com/TimesysGit" />
+  <remote name="timesys"
+	fetch="ssh://git@src.timesys.com/customers/steris/steris-bsp-maintenance" />
+
+  <!-- Yocto/OE layers -->
+  <project remote="yocto"
+	name="poky" path="src/poky" />
+  <project remote="yocto"
+	name="meta-java" path="src/meta-java" />
+  <project remote="oe"
+	name="meta-openembedded" path="src/meta-openembedded" />
+
+  <!-- Freescale layers -->
+  <project remote="freescale-github"
+	name="meta-freescale" path="src/meta-freescale" />
+  <project remote="freescale-github"
+	name="meta-freescale-3rdparty" path="src/meta-freescale-3rdparty" />
+  <project remote="freescale-github"
+	name="meta-freescale-distro" path="src/meta-freescale-distro" />
+
+  <!-- swupdate layers -->
+  <project remote="swupdate-github"
+	name="meta-swupdate" path="src/meta-swupdate" />
+
+  <!-- Timesys layers -->
+  <project remote="timesys-github"
+	name="meta-timesys" path="src/meta-timesys" />
+  <project remote="timesys"
+	name="meta-timesys-security" path="src/meta-timesys-security" />
+  <project remote="timesys" revision="master"
+	name="meta-timesys-test" path="src/meta-timesys-test" />
+  <project remote="timesys" revision="master"
+	name="timesys-test-project" path="src/timesys-test-project" />
+  <project remote="timesys" revision="master"
+    name="meta-timesys-features" path="src/meta-timesys-features"/>
+
+  <!-- Steris layers -->
+  <project remote="timesys" revision="master"
+	name="meta-dfi" path="src/meta-dfi" />
+  <project remote="timesys" revision="master"
+	name="meta-steris" path="src/meta-steris">
+   <linkfile dest="bsp-build-env" src="bsp-build-env"/>
+  </project>
+
+  <!-- Steris projects -->
+  <project remote="timesys" revision="master"
+	name="project-support" path="project-support" />
+  <project remote="timesys" revision="master"
+	name="project-support.wiki" path="project-support/wiki" />
+  <project remote="timesys" revision="master"
+	name="linux-imx" path="src/linux-imx" />
+  <project remote="timesys" revision="master"
+	name="uboot-imx" path="src/uboot-imx" />
+</manifest>
